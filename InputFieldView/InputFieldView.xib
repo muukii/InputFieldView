@@ -52,26 +52,36 @@
                         <action selector="handleActionButton:" destination="LE4-ad-Gbl" eventType="touchUpInside" id="XuH-RE-zho"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjI-YC-Zol">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oi0-XS-Dvs">
                     <rect key="frame" x="93" y="5" width="241" height="30"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjI-YC-Zol">
+                            <rect key="frame" x="0.0" y="0.0" width="241" height="30"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Eh9-IQ-wxd"/>
+                        <constraint firstItem="WjI-YC-Zol" firstAttribute="top" secondItem="Oi0-XS-Dvs" secondAttribute="top" id="FQK-YL-tHi"/>
+                        <constraint firstItem="WjI-YC-Zol" firstAttribute="leading" secondItem="Oi0-XS-Dvs" secondAttribute="leading" id="FYb-oa-rad"/>
+                        <constraint firstAttribute="height" priority="750" constant="30" id="PYc-HH-uVh"/>
+                        <constraint firstAttribute="bottom" secondItem="WjI-YC-Zol" secondAttribute="bottom" id="Yph-aQ-oDZ"/>
+                        <constraint firstAttribute="trailing" secondItem="WjI-YC-Zol" secondAttribute="trailing" id="r4c-a3-1dk"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="9wS-3F-hm3" firstAttribute="leading" secondItem="LE4-ad-Gbl" secondAttribute="leading" constant="8" id="2N9-qj-9Oq"/>
+                <constraint firstItem="Oi0-XS-Dvs" firstAttribute="top" secondItem="LE4-ad-Gbl" secondAttribute="top" constant="5" id="2qb-Ym-DeL"/>
                 <constraint firstAttribute="trailing" secondItem="1M8-Ic-zdy" secondAttribute="trailing" constant="8" id="7wH-v0-nDw"/>
-                <constraint firstItem="WjI-YC-Zol" firstAttribute="top" secondItem="LE4-ad-Gbl" secondAttribute="top" constant="5" id="EB5-MU-1bJ"/>
                 <constraint firstAttribute="bottom" secondItem="1M8-Ic-zdy" secondAttribute="bottom" constant="5" id="ENm-Ml-IfJ"/>
-                <constraint firstItem="1M8-Ic-zdy" firstAttribute="leading" secondItem="WjI-YC-Zol" secondAttribute="trailing" constant="8" id="IhZ-rz-09j"/>
-                <constraint firstItem="WjI-YC-Zol" firstAttribute="leading" secondItem="rux-dc-sC1" secondAttribute="trailing" constant="8" id="Q2g-ps-oTO"/>
+                <constraint firstAttribute="bottom" secondItem="Oi0-XS-Dvs" secondAttribute="bottom" constant="5" id="EgT-rE-EFT"/>
                 <constraint firstAttribute="bottom" secondItem="rux-dc-sC1" secondAttribute="bottom" constant="2" id="YkD-Gy-GFd"/>
-                <constraint firstAttribute="bottom" secondItem="WjI-YC-Zol" secondAttribute="bottom" constant="5" id="ja8-2W-Pvo"/>
+                <constraint firstItem="1M8-Ic-zdy" firstAttribute="leading" secondItem="Oi0-XS-Dvs" secondAttribute="trailing" constant="8" id="acB-Ml-W3H"/>
+                <constraint firstItem="Oi0-XS-Dvs" firstAttribute="leading" secondItem="rux-dc-sC1" secondAttribute="trailing" constant="8" id="oJM-Ey-plt"/>
                 <constraint firstAttribute="bottom" secondItem="9wS-3F-hm3" secondAttribute="bottom" constant="2" id="uPy-8N-mZz"/>
                 <constraint firstItem="rux-dc-sC1" firstAttribute="leading" secondItem="9wS-3F-hm3" secondAttribute="trailing" constant="5" id="zQg-wN-bvG"/>
             </constraints>
@@ -81,10 +91,11 @@
                 <outlet property="actionButton" destination="1M8-Ic-zdy" id="ZuW-Ta-OpC"/>
                 <outlet property="menuLeftButton" destination="9wS-3F-hm3" id="XLx-ur-RUy"/>
                 <outlet property="menuRightButton" destination="rux-dc-sC1" id="qGZ-YU-GAy"/>
+                <outlet property="textFrameView" destination="Oi0-XS-Dvs" id="23G-45-Uvc"/>
+                <outlet property="textFrameViewHeight" destination="PYc-HH-uVh" id="bfG-I4-WfL"/>
                 <outlet property="textView" destination="WjI-YC-Zol" id="oFE-Ep-ncO"/>
-                <outlet property="textViewHeight" destination="Eh9-IQ-wxd" id="AwR-zl-cEs"/>
             </connections>
-            <point key="canvasLocation" x="239" y="298"/>
+            <point key="canvasLocation" x="53" y="283"/>
         </view>
     </objects>
 </document>

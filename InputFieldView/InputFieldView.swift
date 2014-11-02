@@ -10,8 +10,9 @@ import UIKit
 
 class InputFieldView: UIView, UITextViewDelegate{
     @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var textFrameView: UIView!
+    @IBOutlet weak var textFrameViewHeight: NSLayoutConstraint!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var textViewHeight: NSLayoutConstraint!
     @IBOutlet weak var menuRightButton: UIButton!
     @IBOutlet weak var menuLeftButton: UIButton!
     
@@ -38,16 +39,11 @@ class InputFieldView: UIView, UITextViewDelegate{
     
     private func configureView() {
         self.textView.delegate = self
-        self.textView.layer.cornerRadius = 3.0
-        self.textView.layer.borderColor = UIColor(white: 0.8, alpha: 1).CGColor
-        self.textView.layer.borderWidth = 1.0
-        self.textView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        
-//        UIKIT_EXTERN NSString *const UIKeyboardFrameBeginUserInfoKey        NS_AVAILABLE_IOS(3_2); // NSValue of CGRect
-//        UIKIT_EXTERN NSString *const UIKeyboardFrameEndUserInfoKey          NS_AVAILABLE_IOS(3_2); // NSValue of CGRect
-//        UIKIT_EXTERN NSString *const UIKeyboardAnimationDurationUserInfoKey NS_AVAILABLE_IOS(3_0); // NSNumber of double
-//        UIKIT_EXTERN NSString *const UIKeyboardAnimationCurveUserInfoKey    NS_AVAILABLE_IOS(3_0); // NSNumber of NSUInteger (UIViewAnimationCurve)
-//        
+        self.textFrameView.layer.cornerRadius = 3.0
+        self.textFrameView.layer.borderColor = UIColor(white: 0.8, alpha: 1).CGColor
+        self.textFrameView.layer.borderWidth = 1.0
+        self.textView.contentInset = UIEdgeInsetsMake(-2, 0, 1, 0)
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShowNotification:", name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
@@ -128,12 +124,25 @@ class InputFieldView: UIView, UITextViewDelegate{
     // MARK: - UITextViewDelegate
     
     func textViewDidChange(textView: UITextView) {
-        let size = textView.contentSize
-        UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIViewAnimationOptions.BeginFromCurrentState, animations: { () -> Void in
-            self.textViewHeight.constant = min(size.height,100)
-                self.layoutIfNeeded()
-        }) { (finish) -> Void in
+
+        let kMaxHeight: CGFloat = 100.0
+        if self.textFrameViewHeight.constant >= kMaxHeight {
+            textView.scrollEnabled = true
+        } else {
+            textView.scrollEnabled = false
+            let size = textView.sizeThatFits(CGSizeMake(CGRectGetWidth(textView.bounds), kMaxHeight))
+            textView.scrollEnabled = true
             
+            UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIViewAnimationOptions.BeginFromCurrentState, animations: { () -> Void in
+                if size.height > 36 {
+                    self.textFrameViewHeight.constant = min(size.height,kMaxHeight)
+                }
+                self.layoutIfNeeded()
+                }) { (finish) -> Void in
+                    
+            }
         }
+        
+        
     }
 }
