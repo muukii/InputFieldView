@@ -13,6 +13,8 @@
 		4B9104831A0628C700D4313B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B9104821A0628C700D4313B /* Images.xcassets */; };
 		4B9104861A0628C700D4313B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B9104841A0628C700D4313B /* LaunchScreen.xib */; };
 		4B9104921A0628C700D4313B /* InputFieldViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9104911A0628C700D4313B /* InputFieldViewTests.swift */; };
+		4B91049C1A0628DF00D4313B /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B91049B1A0628DF00D4313B /* InputFieldView.swift */; };
+		4B91049E1A0628F200D4313B /* InputFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B91049D1A0628F200D4313B /* InputFieldView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		4B91048B1A0628C700D4313B /* InputFieldViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InputFieldViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9104901A0628C700D4313B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B9104911A0628C700D4313B /* InputFieldViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldViewTests.swift; sourceTree = "<group>"; };
+		4B91049B1A0628DF00D4313B /* InputFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
+		4B91049D1A0628F200D4313B /* InputFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputFieldView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				4B91047B1A0628C700D4313B /* AppDelegate.swift */,
 				4B91047D1A0628C700D4313B /* ViewController.swift */,
+				4B91049B1A0628DF00D4313B /* InputFieldView.swift */,
+				4B91049D1A0628F200D4313B /* InputFieldView.xib */,
 				4B91047F1A0628C700D4313B /* Main.storyboard */,
 				4B9104821A0628C700D4313B /* Images.xcassets */,
 				4B9104841A0628C700D4313B /* LaunchScreen.xib */,
@@ -194,6 +200,7 @@
 			files = (
 				4B9104811A0628C700D4313B /* Main.storyboard in Resources */,
 				4B9104861A0628C700D4313B /* LaunchScreen.xib in Resources */,
+				4B91049E1A0628F200D4313B /* InputFieldView.xib in Resources */,
 				4B9104831A0628C700D4313B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +221,7 @@
 			files = (
 				4B91047E1A0628C700D4313B /* ViewController.swift in Sources */,
 				4B91047C1A0628C700D4313B /* AppDelegate.swift in Sources */,
+				4B91049C1A0628DF00D4313B /* InputFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
